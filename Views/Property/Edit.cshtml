@@ -1,0 +1,28 @@
+﻿@model propertyViewModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1> Edit </h1>
+<form asp-action="Edit">
+    <div class="form-group">
+
+        <input  type="hidden" asp-for="Id" class="form-control" />
+      
+    </div>
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryId">  Category </label>
+        <select asp-for="CategoryId" asp-items="ViewBag.ParentCategories" class="form-control">
+            <option value="">-- Select Parent Category --</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Edit Proerty </button>
+</form>
